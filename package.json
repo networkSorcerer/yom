@@ -19,5 +19,8 @@
     "pug": "^3.0.2",
     "socket.io": "^4.7.5",
     "ws": "^8.16.0"
-  }
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": ""
 }
