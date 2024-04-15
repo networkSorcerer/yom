@@ -9,6 +9,7 @@ const call = document.getElementById("call");
 let myStream;
 let muted = false;
 let cameraOff = false;
+let roomName;
 
 async function getCamera(){
     try {
@@ -86,16 +87,29 @@ cameraBtn.addEventListener("click", handleCameraClick);
 cameraSelect.addEventListener("input", handleCameraChange);
 
 //Wecome form (join a room)
-const welcome = docuent.getElementById("welcome");
+const welcome = document.getElementById("welcome");
 const welcomeForm = welcome.querySelector("form");
 
 call.hidden = true;
 
+function startMedia() {
+    welcome.hidden = true;
+    call.hidden = false;
+    getMedia();
+}
+
 function handleWelcomeSubmit(event){
     event.preventDefault();
     const input = welcomeForm.querySelector("input");
-    socket.emit("join_room", input.value);
+    socket.emit("join_room", input.value, startMedia);
+    roomName = input.value;
     input.value = "";
 }
 
 welcomeForm.addEventListener("submit", handleWelcomeSubmit);
+
+// Socket Code
+
+socket.on("welcome", () => {
+    console.log("someone joined!");
+});
