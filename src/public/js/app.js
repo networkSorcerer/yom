@@ -137,9 +137,9 @@ socket.on("offer", async (offer) => {
     myPeerConnection.addEventListener("datachannel", (event) => {
         myDataChannel = event.channel;
         myDataChannel.addEventListener("message", (event) => {
-            console.log(evnet);
+            console.log(event);
         });
-    })
+    });
     console.log("received the offer");
     myPeerConnection.setRemoteDescription(offer);
     const answer = await myPeerConnection.createAnswer();
