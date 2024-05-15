@@ -30,6 +30,7 @@
    - WebRTC
    - Websockets
 
+혹시 안되면 비쥬얼 스튜디오 코드에서 ctr + shift + p 를 누르고 terminel select default 에서 cmd 로 바꾸고 내 컴퓨터 환경변수에서 path 부분에 nodejs를 새로 만들기로 추가해준다
 
 
 **#ZoomClone #NodeJS #WebRTC #Websockets**
